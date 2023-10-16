@@ -1,6 +1,10 @@
 // Подключаем стили ===============================================================================
 @import "_nulstyle";
 //=================================================================================================
+// Подключаем шрифты (&display=swap) ==============================================================
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&display=swap');
+
+// ================================================================================================
 body {
     background: whitesmoke;
 }
@@ -21,6 +25,7 @@ body {
     align-items: start;
     //border: 2px solid rgb(255, 0, 0);
 }
+
 // ================================================================================================
 
 .card {
@@ -81,7 +86,8 @@ body {
         font-size: 30px;
         color: #ffffff;
     }
-    &__link:hover{
+
+    &__link:hover {
         text-decoration: underline;
     }
 
@@ -101,6 +107,7 @@ body {
     height: 400px;
     margin: 50px;
 }
+
 .hexagon::before {
     content: "";
     position: absolute;
@@ -111,18 +118,22 @@ body {
     border-radius: 50%;
     transition: 0.5s;
 }
+
 .hexagon:hover:before {
     opacity: 0.8;
     transform: scale(0.8);
 }
+
 .hexagon:hover {
     .shape {
         transform: translateY(-30px);
     }
+
     .content {
         opacity: 1;
     }
 }
+
 .shape {
     position: absolute;
     top: 0;
@@ -132,7 +143,8 @@ body {
     clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
     transition: 0.5s;
 }
-.shape img{
+
+.shape img {
     position: absolute;
     top: 0;
     left: 0;
@@ -140,6 +152,7 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
 .content {
     position: absolute;
     top: 0;
@@ -156,19 +169,18 @@ body {
     opacity: 0;
     transition: 0.5s;
 
-    // .content__container
-    &__container {}
-
     // .content__title
     &__title {
         font-size: 40px;
         margin-bottom: 10px;
     }
+
     // .content__link
     &__link {
         font-size: 24px;
         color: #ffffff;
     }
+
     &__link:hover {
         text-decoration: underline;
     }
@@ -179,6 +191,7 @@ body {
         font-size: 20px;
     }
 }
+
 // ================================================================================================
 .box {
     position: relative;
@@ -283,6 +296,7 @@ body {
 .box__link:hover {
     letter-spacing: 0.2em;
 }
+
 // ================================================================================================
 .card-d {
     position: relative;
@@ -485,4 +499,150 @@ body {
         height: 1100px;
     }
 }
+
 // ================================================================================================
+.card-f {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 50px;
+    background-color: #333333;
+    font-family: 'Poppins';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    //background-color: #ff4d4d;
+    //overflow: hidden;
+
+    // .card-f__content
+    &__content {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 25px;
+        gap: 10px;
+        transition-delay: 0s;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    // &__content:hover {
+    //     transition-delay: 0.5s;
+    //     opacity: 1;
+    // }
+
+    &__content h2 {
+        color: #ff4d4d;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 2px;
+    }
+
+    &__content p {
+        color: #ffffff;
+        text-align: center;
+        letter-spacing: 1.5px;
+        line-height: 16px;
+    }
+
+    &__content a {
+        color: #ffffff;
+        background: #ff4d4d;
+        padding: 10px 15px;
+        display: inline-block;
+        margin-top: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+    }
+
+    // .card-f__image
+    &__image {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+        background-color: #ffffff;
+        height: 120px;
+        z-index: 1;
+        transform-origin: bottom;
+    }
+    &__image::before {
+        content: '';
+        position: absolute;
+        bottom: -70px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 144px;
+        height: 74px;
+        background-color: #ffffff;
+        border-bottom-left-radius: 80px;
+        border-bottom-right-radius: 80px;
+        z-index: 1;
+    }
+
+    &__image img {
+        position: relative;
+        top: 50%;
+        width: 80px;
+        height: 80px;
+        z-index: 10;
+    }
+
+    // .card-f__text
+    &__text {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+        height: 280px;
+        border-top: 8px solid #333333;
+        background: #ff4d4d;
+        transform-origin: top;
+        transition-delay: 0.5s;
+        align-items: flex-end;
+        overflow: hidden;
+    }
+
+    &__text::before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        width: 160px;
+        height: 80px;
+        background: #333333;
+        border-bottom-left-radius: 80px;
+        border-bottom-right-radius: 80px;
+    }
+
+    &__text h2 {
+        color: #222222;
+        font-size: 20px;
+        letter-spacing: 1.5px;
+        font-weight: 600;
+        text-transform: uppercase;
+        background: #ffffff;
+        padding: 10px 20px;
+        box-shadow: 0 0 0 8px #333333;
+    }
+
+}
+.card-f:hover {
+    .card-f__image {
+        transform: translateY(-100%) rotateX(90deg);
+    }
+    .card-f__text {
+        transform: translateY(100%) rotateX(90deg);
+    }
+    .card-f__content {
+        transition-delay: 0.5s;
+        opacity: 1;
+    }
+}
